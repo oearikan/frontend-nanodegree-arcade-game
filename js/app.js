@@ -37,7 +37,7 @@ Enemy.prototype.update = function(dt) {
 
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    drawBox(this.x, this.y + 77, 99, 66, "yellow");
+    //drawBox(this.x, this.y + 77, 99, 66, "yellow");
 };
 
 // Now write your own player class
@@ -55,7 +55,7 @@ Player.prototype.update = function () {
 
 Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    drawBox(this.x + 16, this.y + 61, 69, 79, "blue");
+    //drawBox(this.x + 16, this.y + 61, 69, 79, "blue");
 };
 // a handleInput() method.
 Player.prototype.handleInput = function (keyCode) {

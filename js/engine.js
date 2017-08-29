@@ -105,7 +105,7 @@ var Engine = (function(global) {
             player.hitbox.y < allEnemies[i].hitbox.y + allEnemies[i].hitbox.h &&
             player.hitbox.h + player.hitbox.y > allEnemies[i].hitbox.y){
               console.log('Hit!')
-              totalLife -=;
+              reset();
             };
       }
     };
@@ -171,7 +171,9 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        var totalLife = 2
+        //var totalLife = 2;
+        player.x = 200;
+        player.y = 320;
     }
 
     /* Go ahead and load all of the images we know we're going to need to
