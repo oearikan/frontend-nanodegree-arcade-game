@@ -30,13 +30,14 @@ Enemy.prototype.update = function(dt) {
       this.x = -100;
     }
 //EA: When the enemies reach end of canvas, this if block makes them to go back left
+    this.hitbox = {x: this.x, y: this.y + 77, w: 99 , h:66};
 };
 
 // Draw the enemy on the screen, required method for game
 
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    drawBox(this.x, this.y + 77, 100, 67, "yellow");
+    drawBox(this.x, this.y + 77, 99, 66, "yellow");
 };
 
 // Now write your own player class
@@ -44,16 +45,17 @@ var Player = function(x, y) {
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
+//    this.hitbox = {x: this.x, y: this.y, w: 70 , h: 78}
 }
 
 // This class requires an update(), render() and
 Player.prototype.update = function () {
-
+    this.hitbox = {x: this.x + 16, y: this.y + 61, w: 67 , h: 76};
 };
 
 Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    drawBox(this.x + 16, this.y + 61, 70, 80, "blue");
+    drawBox(this.x + 16, this.y + 61, 69, 79, "blue");
 };
 // a handleInput() method.
 Player.prototype.handleInput = function (keyCode) {
@@ -70,10 +72,6 @@ Player.prototype.handleInput = function (keyCode) {
       this.y = this.y + 81.5;
     }
 }; //EA: I don't like the fact that I used absolute values for movement boundaries, later I might work on to make those values relative to sprite & canvas dimensions
-
-Player.prototype.checkCollisions = function() {
-  
-};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies

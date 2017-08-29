@@ -80,7 +80,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        //checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -96,7 +96,19 @@ var Engine = (function(global) {
         });
         player.update();
     }
-
+//EA: This is my collision checker. It works, however, looking at the repetition, I have a feeling it could have been
+//written more elegantly but I can't think of how o.O
+    function checkCollisions() {
+      for (var i = 0; i < allEnemies.length; i++) {
+        if (player.hitbox.x < allEnemies[i].hitbox.x + allEnemies[i].hitbox.w &&
+            player.hitbox.x + player.hitbox.w > allEnemies[i].hitbox.x &&
+            player.hitbox.y < allEnemies[i].hitbox.y + allEnemies[i].hitbox.h &&
+            player.hitbox.h + player.hitbox.y > allEnemies[i].hitbox.y){
+              console.log('Hit!')
+              totalLife -=;
+            };
+      }
+    };
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
      * game tick (or loop of the game engine) because that's how games work -
@@ -159,7 +171,7 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+        var totalLife = 2
     }
 
     /* Go ahead and load all of the images we know we're going to need to
