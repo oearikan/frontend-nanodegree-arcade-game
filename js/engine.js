@@ -25,6 +25,7 @@ var Engine = (function(global) {
         ctx = canvas.getContext('2d'),
         lastTime;
 
+
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
@@ -115,6 +116,9 @@ var Engine = (function(global) {
      * they are flipbooks creating the illusion of animation but in reality
      * they are just drawing the entire screen over and over.
      */
+    //  ctx.fillStyle = "#FFFF00"; // Yellow
+    //  ctx.fillRect(0,0, ctx.canvas.width, ctx.canvas.height);
+
     function render() {
         /* This array holds the relative URL to the image used
          * for that particular row of the game level.
@@ -164,6 +168,7 @@ var Engine = (function(global) {
         });
 
         player.render();
+
     }
 
     /* This function does nothing but it could have been a good place to
@@ -171,10 +176,14 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        //var totalLife = 2;
+        player.score = 0;
         player.x = 200;
         player.y = 320;
     }
+
+
+
+    // ctx.fillText("lives: " + player.lives, 400, 30);
 
     /* Go ahead and load all of the images we know we're going to need to
      * draw our game level. Then set init as the callback method, so that when

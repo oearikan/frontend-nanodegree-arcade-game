@@ -1,6 +1,18 @@
-frontend-nanodegree-arcade-game
+# 6th Submission: Arcade Game Clone
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+### To Run the Game and Inspect code
+1. Clone or download the files from: https://github.com/oearikan/frontend-nanodegree-arcade-game
+2. Open the index.html file using your preferred browser and you are set!
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+### How to play the game
+1. Once loaded, use arrow keys to move the character in the x-y coordinate.
+2. Avoid bugs!
+3. Reach water to get points.
+
+### Other useful information
+1. If bugs touch you, your score is reset and you're sent back to starting position.
+2. You have infinite life.
+3. Gain as much point as you can or until you get bored.
+4. You may want to remain on the safe green zone (grassland), while waiting for an opportunate moment to make a run for the water.
+5. You can refresh page to get a new set of enemies to play against.
